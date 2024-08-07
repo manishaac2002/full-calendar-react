@@ -6,6 +6,9 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import listPlugin from '@fullcalendar/list';
 
 const Calendar = () => {
+
+
+
     return (
         <div>
             <FullCalendar
@@ -21,6 +24,13 @@ const Calendar = () => {
                     { title: "event 2", date: "2024-08-07" }
                 ]}
                 height={"90vh"}
+                selectable= {true}
+                dateClick={function(info) {
+                    alert('Clicked on: ' + info.dateStr );
+                    alert('Enter the title:')
+                    // change the day's background color just for fun
+                    info.dayEl.style.backgroundColor = 'red';
+                  }}
             />
         </div>
     );
